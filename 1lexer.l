@@ -34,3 +34,13 @@ int main()
     yylex();
     return 0;
 }
+
+
+flex lexer.l
+gcc lex.yy.c -o lexer
+./lexer
+
+yacc -d parser.y
+flex lexer.l
+gcc y.tab.c lex.yy.c -o parser
+./parser
